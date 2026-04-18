@@ -1,81 +1,86 @@
 <!doctype html>
 <html lang="es" data-theme="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+    <title>HelpCoctel — El Arte de Mezclar</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="./styles/styles.css" />
-  <title>HelpCoctel — El Arte de Mezclar</title>
-</head>
-
-<body>
-  <header>
-    <div class="header-logo">
-      <span class="logo-icon">⬡</span>
-      <h1 class="logo-text">HelpCoctel</h1>
-    </div>
-    <nav class="header-nav">
-      <a href="#" class="nav-link">Combinaciones</a>
-      <a href="#" class="nav-link">Cubatas</a>
-      <a href="#" class="nav-link">Cócteles</a>
-      <a href="#" class="nav-link">Sobre Nosotros</a>
-    </nav>
-    <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
-      <span class="theme-icon">☀</span>
-    </button>
-  </header>
-
-  <section class="hero">
-    <div class="hero-bg-orb orb-left"></div>
-    <div class="hero-bg-orb orb-right"></div>
-    <div class="hero-content">
-      <p class="hero-eyebrow">Descubre tu próxima copa</p>
-      <h2 class="hero-title">El arte de<br /><em>la mezcla perfecta</em></h2>
-      <p class="hero-subtitle">
-        Más de 600 recetas de cócteles al alcance de tu mano
-      </p>
-      <div class="search-bar">
-        <span class="search-icon">⌕</span>
-        <input type="text" id="searchInput" placeholder="Busca un cóctel... (ej. Mojito, Negroni)" autocomplete="off" />
-        <button id="searchBtn">Buscar</button>
+  <body>
+    <header>
+      <div class="header-logo">
+        <span class="logo-icon">⬡</span>
+        <h1 class="logo-text">HelpCoctel</h1>
       </div>
-      <div id="searchSuggestions" class="search-suggestions"></div>
-    </div>
-  </section>
-
-  <section class="section-featured" id="mainSection">
-    <div class="section-header">
-      <div>
-        <p class="section-eyebrow">Para inspirarte</p>
-        <h3 class="section-title">Cócteles del momento</h3>
-      </div>
-      <button class="refresh-btn" id="refreshBtn">
-        <span class="refresh-icon">↻</span> Nuevos cócteles
+      <nav class="header-nav">
+        <a href="#" class="nav-link">Combinaciones</a>
+        <a href="#" class="nav-link">Cubatas</a>
+        <a href="#" class="nav-link">Cócteles</a>
+        <a href="#" class="nav-link">Sobre Nosotros</a>
+      </nav>
+      <button class="theme-toggle" id="themeToggle" aria-label="Cambiar tema">
+        <span class="theme-icon">☀</span>
       </button>
+    </header>
+
+    <section class="hero">
+      <div class="hero-bg-orb orb-left"></div>
+      <div class="hero-bg-orb orb-right"></div>
+      <div class="hero-content">
+        <p class="hero-eyebrow">Descubre tu próxima copa</p>
+        <h2 class="hero-title">El arte de<br /><em>la mezcla perfecta</em></h2>
+        <p class="hero-subtitle">
+          Más de 600 recetas de cócteles al alcance de tu mano
+        </p>
+        <div class="search-bar">
+          <span class="search-icon">⌕</span>
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Busca un cóctel... (ej. Mojito, Negroni)"
+            autocomplete="off"
+          />
+          <button id="searchBtn">Buscar</button>
+        </div>
+        <div id="searchSuggestions" class="search-suggestions"></div>
+      </div>
+    </section>
+
+    <section class="section-featured" id="mainSection">
+      <div class="section-header">
+        <div>
+          <p class="section-eyebrow">Para inspirarte</p>
+          <h3 class="section-title">Cócteles del momento</h3>
+        </div>
+        <button class="refresh-btn" id="refreshBtn">
+          <span class="refresh-icon">↻</span> Nuevos cócteles
+        </button>
+      </div>
+      <div class="cards-grid" id="cardsContainer"></div>
+    </section>
+
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal" id="modal">
+        <button class="modal-close" id="modalClose">✕</button>
+        <div class="modal-inner" id="modalContent"></div>
+      </div>
     </div>
-    <div class="cards-grid" id="cardsContainer"></div>
-  </section>
 
-  <div class="modal-overlay" id="modalOverlay">
-    <div class="modal" id="modal">
-      <button class="modal-close" id="modalClose">✕</button>
-      <div class="modal-inner" id="modalContent"></div>
-    </div>
-  </div>
+    <footer>
+      <div class="footer-logo">
+        <span class="logo-icon">⬡</span>
+        <span class="logo-text">HelpCoctel</span>
+      </div>
+      <p class="footer-copy">
+        Datos proporcionados por
+        <a href="https://www.thecocktaildb.com" target="_blank"
+          >TheCocktailDB</a
+        >
+      </p>
+    </footer>
 
-  <footer>
-    <div class="footer-logo">
-      <span class="logo-icon">⬡</span>
-      <span class="logo-text">HelpCoctel</span>
-    </div>
-    <p class="footer-copy">
-      Datos proporcionados por
-      <a href="https://www.thecocktaildb.com" target="_blank">TheCocktailDB</a>
-    </p>
-  </footer>
-
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-  <script src="/src/main.js"></script>
-</body>
-
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="/src/main.js"></script>
+  </body>
 </html>
